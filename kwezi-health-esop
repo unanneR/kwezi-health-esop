@@ -1,0 +1,12 @@
+terprise Staff Operations Platform implementation
+
+
+- Implement StaffMember and SystemAdmin domain models
+
+- Add StaffService for in-memory CRUD operations
+
+- Implement AccessController with cookie authentication (Login/Logout)
+
+- Create StaffController and views for staff management
+
+- Configure dependency injection, cookie authentication, and routing in Program.cs
