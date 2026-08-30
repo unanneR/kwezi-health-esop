@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("kwezi-health-esop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e931e487b6b0a9cc742f629629c30fc04877475")]
 [assembly: System.Reflection.AssemblyProductAttribute("kwezi-health-esop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("kwezi-health-esop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

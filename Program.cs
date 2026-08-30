@@ -1,3 +1,6 @@
+using kwezi_health_esop.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 namespace kwezi_health_esop
 {
     public class Program
@@ -8,6 +11,14 @@ namespace kwezi_health_esop
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddSingleton<StaffService>();
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Access/Login";
+        options.AccessDeniedPath = "/Access/Login";
+    });
 
             var app = builder.Build();
 
@@ -15,7 +26,6 @@ namespace kwezi_health_esop
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -24,11 +34,12 @@ namespace kwezi_health_esop
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Staff}/{action=Index}/{id?}");
 
             app.Run();
         }
